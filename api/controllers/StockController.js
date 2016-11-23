@@ -16,6 +16,36 @@ module.exports = {
         user: user
       });
     });
+	},
+
+	create: function(req, res) {
+
+		var paramObj = {
+
+			symbol: req.param('symbol'),
+
+			number_of_shares: req.param('number_of_shares'),
+
+			owner: req.param('owner'),
+
+		}
+
+		// Create a User with the params sent from
+		// the sign-up form --> new.ejs
+		Stock.create(paramObj, function stockCreated(err, stock) {
+
+			if (err) {
+				console.log(err);
+				req.session.flash = {
+					err: err
+				}
+				return res.redirect('/stock/new');
+			}
+
+			// res.json(user);
+			res.redirect('/customer/show/' + stock.owner);
+
+		});
 	}
 
 

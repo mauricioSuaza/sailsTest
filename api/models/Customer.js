@@ -19,10 +19,10 @@ module.exports = {
 
     state: {
       type: 'string'
-    }
+    },
 
-    stocks:{
-      colletion: 'stock',
+    stocks: {
+      collection: 'stock',
       via: 'owner'
     }
   }

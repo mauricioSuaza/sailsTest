@@ -1,0 +1,22 @@
+<form action="/stock/create" method="POST" >
+	<div class="form-group">
+
+  <h2>Create a stock for <%= user.name %> </h2>
+
+
+	<div class="control-group" style = "width: 300px;">
+	<input type="text" class="form-control" placeholder="symbol" name="symbol">
+	</div>
+
+	<div class="control-group" style = "width: 300px;">
+	<input type="text" class="form-control" placeholder="number_of_shares" name="number_of_shares">
+	</div>
+
+  <div class="control-group" style = "width: 300px;">
+  <input type="hidden" value="<%= user.id %>"  name="owner">
+  </div>
+
+	</div>
+	<input type="submit" value="Create Stock" class="btn btn-default"/> |
+	<a href="/customer/show/<%user.id%>">Back to list</a>
+</form>
