@@ -1,0 +1,17 @@
+<!-- ./views/todo/index.ejs -->
+<h1>Todos</h1>
+
+<table>
+  <tr>
+    <th>Owner</th>
+    <th>Text</th>
+  </tr>
+
+  <% todos.forEach(function(todo){ %>
+    <tr>
+      <td><%= todo.owner %></td>
+      <td><%= todo.text %></td>
+      <td><%= todo.pub %></td>
+    </tr>
+  <% }); %>
+</table>
