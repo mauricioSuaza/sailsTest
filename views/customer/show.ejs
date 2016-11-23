@@ -22,3 +22,8 @@
 <a href="/user/edit/<%=user.id %>" class="btn btn-default">Edit</a> |
 <a href="/customer">Back to list</a>
 </form>
+
+<form class="show" action="/stock/new" method="POST">
+	<input value="<%= user.id %>" name="owner" type="hidden" />
+	<input type="submit" value="Add Stock" class="btn btn-default"/> |
+</form>

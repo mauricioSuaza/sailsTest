@@ -39,10 +39,15 @@ module.exports.routes = {
   'get /todos': 'TodoController.index',
 
   'get /create': 'TodoController.new',
-  
+
   'post /create': 'TodoController.create',
    // Index page
-  '/': 'TodoController.index'
+
+   'get /customer': 'CustomerController.index',
+
+  '/': {
+    view : 'static/home'
+  }
 
   /***************************************************************************
   *                                                                          *

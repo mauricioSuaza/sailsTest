@@ -1,0 +1,45 @@
+<div class="container">
+	<h3>Customer Listings</h3>
+	<table class='table table-hover table-condensed'>
+	<tr>
+
+	<th> name </th>
+
+	<th> email </th>
+
+	<th> state</th>
+
+  <th> id </th>
+
+	<th></th>
+	<th></th>
+	<th></th>
+  <th></th>
+
+</tr>
+	<% _.forEach(users, function(user) { %>
+    		<tr data-id="<%=user.id %>" data-model="user">
+
+			<td><%= user.name%></td>
+
+
+
+			<td><%= user.email%></td>
+
+			<td><%= user.state%></td>
+
+      <td><%= user.id%></td>
+
+			<td><a href="/customer/show/<%=user.id %>"  class="btn btn-primary btn-sm" role="button">Show</a></td>
+			<td><a href="/customer/edit/<%=user.id %>"  class="btn btn-primary btn-sm" role="button">Edit</a></td>
+
+			<td><form action="/customer/destroy/<%=user.id %>" method="POST">
+				<input type="hidden" name="_method" value="delete"/>
+				<input type="submit" value="Delete"  class="btn btn-danger btn-sm" role="button"/>
+			</form></td>
+		</tr>
+<% }) %>
+	</table>
+	<a href="/customer/new/" class="btn btn-success btn-sm" role="button">New Customer</a> |
+	<a href="/">all scaffolds</a>
+</div>
