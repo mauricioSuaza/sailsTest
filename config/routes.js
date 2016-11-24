@@ -43,6 +43,8 @@ module.exports.routes = {
   'post /create': 'TodoController.create',
    // Index page
 
+   'get /distance': 'DistanceController.distMeter',
+
    'get /customer': 'CustomerController.index',
 
   '/': {
