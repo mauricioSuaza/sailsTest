@@ -1,6 +1,6 @@
 <form class="show">
 	<div class="form-group">
-		<h2> a customer... </h2>
+		<h2> Showing customer <%= user.name %></h2>
 
 	<div class="form-group" style="width: 400px;">
 	<label>name</label>
@@ -24,6 +24,39 @@
 </form>
 
 <form class="show" action="/stock/new" method="POST">
+	<h2> <%= user.name %>'s Stocks</h2>
+	<table  class='table table-hover table-condensed'>
+		<tr>
+			<th>symbol</th>
+			<th>Number of shares</th>
+			<th>Current Price</th>
+			<th>	</th>
+			<th>	</th>
+			<th>	</th>
+
+		</tr>
+
+		<% _.forEach (user.stocks, function(stock) { %>
+
+				<tr data-id="<%=stock.id %>" data-model="stock">
+
+				<td><%= stock.symbol%></td>
+
+				<td><%= stock.number_of_shares%></td>
+
+				<td></td>
+
+
+				<td><a href="/stock/show/<%=user.id %>"  class="btn btn-primary btn-sm" role="button">Show</a></td>
+				<td><a href="/stock/edit/<%=user.id %>"  class="btn btn-primary btn-sm" role="button">Edit</a></td>
+
+				<td><form action="/stock/destroy/<%=user.id %>" method="POST">
+					<input type="hidden" name="_method" value="delete"/>
+					<input type="submit" value="Delete"  class="btn btn-danger btn-sm" role="button"/>
+				</form></td>
+			</tr>
+		<% }) %>
+	</table>
 	<input value="<%= user.id %>" name="owner" type="hidden" />
 	<input type="submit" value="Add Stock" class="btn btn-default"/> |
 </form>

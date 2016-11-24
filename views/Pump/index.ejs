@@ -1,0 +1,53 @@
+<div class="container">
+	<h3>Pump Listing</h3>
+	<table class='table table-hover table-condensed'>
+	<tr>
+
+	<th> name </th>
+
+	<th> pumpCard </th>
+
+	<th> generation </th>
+
+	<th> locationX </th>
+
+	<th> locationY </th>
+
+	<th> gender </th>
+
+	<th> state </th>
+
+	<th></th>
+	<th></th>
+	<th></th>
+</tr>
+	<% _.forEach(pumps, function(pump) { %>
+    		<tr data-id="<%=pump.id %>" data-model="pump">
+		
+			<td><%= pump.name%></td>
+		
+			<td><%= pump.pumpCard%></td>
+		
+			<td><%= pump.generation%></td>
+		
+			<td><%= pump.locationX%></td>
+		
+			<td><%= pump.locationY%></td>
+		
+			<td><%= pump.gender%></td>
+		
+			<td><%= pump.state%></td>
+		
+			<td><a href="/pump/show/<%=pump.id %>"  class="btn btn-primary btn-sm" role="button">Show</a></td>
+			<td><a href="/pump/edit/<%=pump.id %>"  class="btn btn-primary btn-sm" role="button">Edit</a></td>
+
+			<td><form action="/pump/destroy/<%=pump.id %>" method="POST">
+				<input type="hidden" name="_method" value="delete"/>
+				<input type="submit" value="Delete"  class="btn btn-danger btn-sm" role="button"/>
+			</form></td>
+		</tr>
+<% }) %>
+	</table>
+	<a href="/pump/new/" class="btn btn-success btn-sm" role="button">New Pump</a> |
+	<a href="/">all scaffolds</a>
+</div>
