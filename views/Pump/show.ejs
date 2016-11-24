@@ -2,45 +2,53 @@
 	<div class="form-group">
 		<h2> Showing <%= pump.name %> </h2>
 
-	<div class="form-group" style="width: 400px;">
-	<label>name</label>
+	<div class="form-group col-sm-6" >
+	<label>Name</label>
 	<input value="<%= pump.name %>" name="name" type="text" class="form-control" disabled/>
 	</div>
 
-	<div class="form-group" style="width: 400px;">
+	<div class="form-group col-sm-6" >
 	<label>Pumpcard</label>
 	<input value="<%= pump.pumpCard %>" name="pumpCard" type="text" class="form-control" disabled/>
 	</div>
 
-	<div class="form-group" style="width: 400px;">
-	<label>Generation</label>
-	<input value="<%= pump.generation %>" name="generation" type="text" class="form-control" disabled/>
-	</div>
 
-	<div class="form-group" style="width: 400px;">
+	<div class="form-group col-sm-6 " >
 	<label>LocationX</label>
 	<input value="<%= pump.locationX %>" name="locationX" type="text" class="form-control" disabled/>
 	</div>
 
-	<div class="form-group" style="width: 400px;">
+	<div class="form-group col-sm-6" >
 	<label>LocationY</label>
 	<input value="<%= pump.locationY %>" name="locationY" type="text" class="form-control" disabled/>
 	</div>
 
-	<div class="form-group" style="width: 400px;">
+	<div class="form-group col-sm-6 " >
+	<label>Generation</label>
+	<input value="<%= pump.generation %>" name="generation" type="text" class="form-control" disabled/>
+	</div>
+
+	<div class="form-group col-sm-6 " >
 	<label>Gender</label>
 	<input value="<%= pump.gender %>" name="gender" type="text" class="form-control" disabled/>
 	</div>
 
-	<div class="form-group" style="width: 400px;">
+	<div class="form-group col-sm-6 " >
 	<label>State</label>
 	<input value="<%= pump.state %>" name="state" type="text" class="form-control" disabled/>
 	</div>
 
+
+
+		<a href="/pump">Back to all pumps</a>
+
+
 </div>
-</div>
-<a href="/pump/edit/<%=pump.id %>" class="btn btn-default">Edit</a> |
-<a href="/pump">Back to list</a>
+
+
+
+
+
 </form>
 
 <form class="show" action="/work/new" method="POST">
@@ -68,10 +76,10 @@
 				<td><%= work.time%></td>
 
 
-				<td><a href="/work/show/<%=pump.id %>"  class="btn btn-primary btn-sm" role="button">Show</a></td>
-				<td><a href="/work/edit/<%=pump.id %>"  class="btn btn-primary btn-sm" role="button">Edit</a></td>
+				<td><a href="/work/show/<%=work.id %>"  class="btn btn-primary btn-sm" role="button">Show</a></td>
+				<td><a href="/work/edit/<%=work.id %>"  class="btn btn-primary btn-sm" role="button">Edit</a></td>
 
-				<td><form action="/work/destroy/<%=pump.id %>" method="POST">
+				<td><form action="/work/destroy/<%=work.id %>" method="POST">
 					<input type="hidden" name="_method" value="delete"/>
 					<input type="submit" value="Delete"  class="btn btn-danger btn-sm" role="button"/>
 				</form></td>

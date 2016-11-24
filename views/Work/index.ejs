@@ -15,13 +15,13 @@
 </tr>
 	<% _.forEach(works, function(work) { %>
     		<tr data-id="<%=work.id %>" data-model="work">
-		
+
 			<td><%= work.company%></td>
-		
+
 			<td><%= work.boss%></td>
-		
+
 			<td><%= work.time%></td>
-		
+
 			<td><a href="/work/show/<%=work.id %>"  class="btn btn-primary btn-sm" role="button">Show</a></td>
 			<td><a href="/work/edit/<%=work.id %>"  class="btn btn-primary btn-sm" role="button">Edit</a></td>
 
@@ -32,6 +32,6 @@
 		</tr>
 <% }) %>
 	</table>
-	<a href="/work/new/" class="btn btn-success btn-sm" role="button">New Work</a> |
-	<a href="/">all scaffolds</a>
+
+	<a href="/pump">Back to pumps</a>
 </div>

@@ -8,19 +8,19 @@
 <% }) %>
 </ul>
 <% } %>
-		
+
 	<div class="form-group" style="width: 400px;">
-	<label>name</label>
+	<label>Company name</label>
 	<input value="<%= work.company %>" name="company" type="text" class="form-control"/>
 	</div>
 
 	<div class="form-group" style="width: 400px;">
-	<label>name</label>
+	<label>Direct Boss</label>
 	<input value="<%= work.boss %>" name="boss" type="text" class="form-control"/>
 	</div>
 
 	<div class="form-group" style="width: 400px;">
-	<label>name</label>
+	<label>Months Worked</label>
 	<input value="<%= work.time %>" name="time" type="text" class="form-control"/>
 	</div>
 
@@ -28,5 +28,3 @@
 		<input type="submit" value="Update Work" class="btn btn-default"/>
 		<a href="/work/show/<%=work.id %>" class="btn btn-danger">Cancel</a>
 	</form>
-	
-	

@@ -27,7 +27,6 @@ module.exports = {
       boss: req.param('boss'),
 
       time: req.param('time'),
-
 			owner: req.param('owner'),
 
     }
@@ -122,7 +121,7 @@ module.exports = {
         if (err) return next(err);
     });
 
-      res.redirect('/work');
+      res.redirect('/pump/show/' + work.owner );
 
     });
   }

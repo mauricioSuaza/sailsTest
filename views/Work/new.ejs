@@ -11,22 +11,25 @@
 <% } %>
 
 	<div class="control-group" style = "width: 300px;">
+	<label for=""> Company name</label>
 	<input type="text" class="form-control" placeholder="company" name="company">
 	</div>
 
 	<div class="control-group" style = "width: 300px;">
+	<label for=""> Direct Boss</label>
 	<input type="text" class="form-control" placeholder="boss" name="boss">
 	</div>
 
 	<div class="control-group" style = "width: 300px;">
+	<label for=""> Months Worked</label>
 	<input type="text" class="form-control" placeholder="time" name="time">
 	</div>
 
 	<div class="control-group" style = "width: 300px;">
-	<input type="text" value="<%= user.id %>"  name="owner">
+	<input type="hidden" value="<%= user.id %>"  name="owner">
 	</div>
 
 	</div>
 	<input type="submit" value="Submit" class="btn btn-default"/> |
-	<a href="/pump">Back to pumps</a>
+	<a href="/pump">Back to  pumps</a>
 </form>
