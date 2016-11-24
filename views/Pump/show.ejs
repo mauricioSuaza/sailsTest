@@ -42,3 +42,44 @@
 <a href="/pump/edit/<%=pump.id %>" class="btn btn-default">Edit</a> |
 <a href="/pump">Back to list</a>
 </form>
+
+<form class="show" action="/work/new" method="POST">
+	<h2> <%= pump.name %>'s Work history</h2>
+
+	<table  class='table table-hover table-condensed'>
+		<tr>
+			<th>Company</th>
+			<th>Boss</th>
+			<th>Months</th>
+			<th>	</th>
+			<th>	</th>
+			<th>	</th>
+
+		</tr>
+
+		<% _.forEach (pump.works, function(work) { %>
+
+				<tr data-id="<%=work.id %>" data-model="work">
+
+				<td><%= work.company%></td>
+
+				<td><%= work.boss%></td>
+
+				<td><%= work.time%></td>
+
+
+				<td><a href="/work/show/<%=pump.id %>"  class="btn btn-primary btn-sm" role="button">Show</a></td>
+				<td><a href="/work/edit/<%=pump.id %>"  class="btn btn-primary btn-sm" role="button">Edit</a></td>
+
+				<td><form action="/work/destroy/<%=pump.id %>" method="POST">
+					<input type="hidden" name="_method" value="delete"/>
+					<input type="submit" value="Delete"  class="btn btn-danger btn-sm" role="button"/>
+				</form></td>
+			</tr>
+		<% }) %>
+	</table>
+
+	<input value="<%= pump.id %>" name="owner" type="hidden" />
+	<input type="submit" value="Añadir trabajo" class="btn btn-default"/>
+
+</form>

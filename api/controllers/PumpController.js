@@ -6,9 +6,9 @@
  */
 
 module.exports = {
-	
+
   'new': function(req,res){
-    res.view();    
+    res.view();
   },
 
   create: function(req, res) {
@@ -31,7 +31,7 @@ module.exports = {
 
     }
 
-    // Create a User with the params sent from 
+    // Create a User with the params sent from
     // the sign-up form --> new.ejs
     Pump.create(paramObj, function pumpCreated(err, pump) {
 
@@ -50,7 +50,7 @@ module.exports = {
   },
 
   show: function(req, res, next) {
-    Pump.findOne(req.param('id'), function foundPump(err, pump) {
+    Pump.findOne(req.param('id')).populateAll().exec(function(err, pump){
       if (err) return next(err);
       if (!pump) return next();
 
@@ -64,7 +64,7 @@ module.exports = {
   index: function(req, res, next) {
     Pump.find(function foundPumps(err, pumps) {
       if (err) return next(err);
-      
+
       res.view({
         pumps: pumps
       });
@@ -127,13 +127,12 @@ module.exports = {
 
       Pump.destroy(req.param('id'), function pumpDestroyed(err) {
         if (err) return next(err);
-    });        
+    });
 
       res.redirect('/pump');
 
     });
   }
- 
+
 
 };
-

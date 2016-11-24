@@ -1,6 +1,6 @@
 <form action="/work/create" method="POST" role="form" class="new">
 	<div class="form-group">
-	<h2>Create a work</h2>
+	<h2>Add work for <%= user.name %> </h2>
 
 <% if(flash && flash.err) { %>
 <ul class="alert alert-success">
@@ -9,7 +9,7 @@
 <% }) %>
 </ul>
 <% } %>
-	
+
 	<div class="control-group" style = "width: 300px;">
 	<input type="text" class="form-control" placeholder="company" name="company">
 	</div>
@@ -22,7 +22,11 @@
 	<input type="text" class="form-control" placeholder="time" name="time">
 	</div>
 
+	<div class="control-group" style = "width: 300px;">
+	<input type="text" value="<%= user.id %>"  name="owner">
 	</div>
-	<input type="submit" value="Submit" class="btn btn-default"/> | 
-	<a href="/work">Back to list</a>
+
+	</div>
+	<input type="submit" value="Submit" class="btn btn-default"/> |
+	<a href="/pump">Back to pumps</a>
 </form>

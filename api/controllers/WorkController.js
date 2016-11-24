@@ -6,10 +6,17 @@
  */
 
 module.exports = {
-	
-  'new': function(req,res){
-    res.view();    
-  },
+
+	'new' : function(req, res){
+		Pump.findOne(req.param('owner'), function foundPump(err, user) {
+      if (err) return next(err);
+      if (!user) return next();
+      // res.json(user);
+      res.view({
+        user: user
+      });
+    });
+	},
 
   create: function(req, res) {
 
@@ -21,9 +28,11 @@ module.exports = {
 
       time: req.param('time'),
 
+			owner: req.param('owner'),
+
     }
 
-    // Create a User with the params sent from 
+    // Create a User with the params sent from
     // the sign-up form --> new.ejs
     Work.create(paramObj, function workCreated(err, work) {
 
@@ -56,7 +65,7 @@ module.exports = {
   index: function(req, res, next) {
     Work.find(function foundWorks(err, works) {
       if (err) return next(err);
-      
+
       res.view({
         works: works
       });
@@ -111,13 +120,12 @@ module.exports = {
 
       Work.destroy(req.param('id'), function workDestroyed(err) {
         if (err) return next(err);
-    });        
+    });
 
       res.redirect('/work');
 
     });
   }
- 
+
 
 };
-

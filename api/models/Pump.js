@@ -25,6 +25,12 @@ module.exports = {
 
     state : { type: 'string',
               enum: ['Alive', 'Dead']
-            }
+            },
+
+    works:{
+              collection: 'work',
+              via: 'owner',
+          }
+
   }
 };
