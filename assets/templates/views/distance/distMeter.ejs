@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>Calcular Distancia entre 2 pumps</h1>
+
+    <div class="container">
+
+      <h3>Pump Listing</h3>
+
+      <form action="" role="form" class="new">
+
+        <label for="pump2X"> Pump 1</label>
+        <select class="form-control " id="sel1" name="pump1">
+          <% _.forEach(pumps, function(pump) { %>
+            <option><%=pump.name%></option>
+          <% }) %>
+        </select>
+        <br>
+        <label for="pump1X"> locationX</label>
+        <select class="form-group" id="loc1" name="pump1X" disabled>
+          <% _.forEach(pumps, function(pump) { %>
+            <option><%=pump.locationX%></option>
+          <% }) %>
+        </select>
+
+        <label for="pump1Y"> locationY</label>
+        <select class="form-group" id="loc2" name="pump1Y" disabled>
+          <% _.forEach(pumps, function(pump) { %>
+            <option><%=pump.locationY%></option>
+          <% }) %>
+        </select>
+
+        <br>
+
+        <label for="pump2"> Pump 2</label>
+        <select class="form-control" id="sel2" name="pump2">
+          <% _.forEach(pumps, function(pump) { %>
+            <option><%=pump.name%></option>
+          <% }) %>
+        </select>
+        <br>
+        <label for="pump2X"> locationX</label>
+        <select class="form-group" id="loc3" name="pump2X" disabled>
+          <% _.forEach(pumps, function(pump) { %>
+            <option><%=pump.locationX%></option>
+          <% }) %>
+        </select>
+
+        <label for="pump2Y"> locationY</label>
+        <select class="form-group" id="loc4" name="pump2Y" disabled>
+          <% _.forEach(pumps, function(pump) { %>
+            <option><%=pump.locationY%></option>
+          <% }) %>
+        </select>
+        <br>
+
+        <button id="calcular" type='button' class="btn btn-default">submit</button>
+
+        <div>
+          <h1 id="content">
+          </h1>
+        </div>
+      </form>
+
+    </div>
+
+    <script type="text/javascript">
+      $(function(){
+
+        $("#calcular").bind('click',function(){
+          var a = parseInt($("#loc1").val());
+          var b = parseInt($("#loc2").val());
+          var c = parseInt($("#loc3").val());
+          var d = parseInt($("#loc4").val());
+
+          var dist = Math.sqrt( Math.pow((a-c),2) + Math.pow((b-d),2) );
+          dist = parseFloat(dist).toPrecision(6)
+          $("#content").html("La distancia es " + dist);
+
+        });
+
+        $("#sel1").change(function(){
+
+          var savedIndex = $("#sel1").prop('selectedIndex');
+          $("#loc1").prop('selectedIndex', savedIndex);
+          $("#loc2").prop('selectedIndex', savedIndex);
+
+        });
+
+        $("#sel2").change(function(){
+
+
+          var savedIndex = $("#sel2").prop('selectedIndex');
+          $("#loc3").prop('selectedIndex', savedIndex);
+          $("#loc4").prop('selectedIndex', savedIndex);
+
+        });
+
+
+
+      });
+    </script>
+
+  </body>
+</html>

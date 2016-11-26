@@ -18,7 +18,8 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
    //connection: 'localDiskDb',
-  connection: 'somemongo'
+  connection: 'somemongo',
+  migrate: 'safe'
   /***************************************************************************
   *                                                                          *
   * How and whether Sails will attempt to automatically rebuild the          *

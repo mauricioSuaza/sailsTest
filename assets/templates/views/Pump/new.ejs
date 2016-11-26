@@ -1,0 +1,74 @@
+<form action="/pump/create" method="POST" role="form" class="new">
+	<div class="form-group">
+	<h2>Create a pump</h2>
+
+<% if(flash && flash.err) { %>
+<ul class="alert alert-success">
+<% Object.keys(flash.err).forEach(function(error) { %>
+<li><%- JSON.stringify(flash.err[error]) %></li>
+<% }) %>
+</ul>
+<% } %>
+
+	<div class="control-group" style = "width: 300px;">
+	<input type="text" class="form-control" placeholder="name" name="name">
+	</div>
+
+	<div class="control-group" style = "width: 300px;">
+	<input type="text" class="form-control" placeholder="pumpCard" name="pumpCard">
+	</div>
+
+
+	<div class="control-group" style = "width: 300px;">
+	<input type="text" class="form-control" placeholder="locationX" name="locationX">
+	</div>
+
+	<div class="control-group" style = "width: 300px;">
+	<input type="text" class="form-control" placeholder="locationY" name="locationY">
+	</div>
+
+	<label>Gender:</label> <br>
+	<div class="btn-group" data-toggle="buttons" style = "width: 300px;">
+
+		<label class="radio-inline"><input type="radio" name="gender"  value="M">M</label>
+		<label class="radio-inline"><input type="radio" name="gender"  value="F">F</label>
+
+	</div>
+
+	<div  class="btn-group"  data-toggle="buttons" style = "width: 300px;">
+		<label>State: </label> <br>
+		<label class="radio-inline"><input type="radio" name="state"  value="Alive">Alive</label>
+		<label class="radio-inline"><input type="radio" name="state"  value="Dead">Dead</label>
+	</div>
+
+	<div class="form-group" style = "width: 300px;">
+  <label for="sel1">Generation:</label>
+  <select class="form-control" id="sel1" name="generation">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+		<option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+		<option>9</option>
+    <option>10</option>
+    <option>11</option>
+    <option>12</option>
+		<option>13</option>
+    <option>14</option>
+    <option>15</option>
+		<option>16</option>
+    <option>17</option>
+    <option>18</option>
+		<option>19</option>
+    <option>20</option>
+
+  </select>
+	</div>
+
+	</div>
+	<input type="submit" value="Submit" class="btn btn-default"/> |
+	<a href="/pump">Back to list</a>
+</form>

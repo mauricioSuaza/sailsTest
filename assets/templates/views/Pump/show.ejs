@@ -1,0 +1,93 @@
+<form class="show">
+	<div class="form-group">
+		<h2> Showing <%= pump.name %> </h2>
+
+	<div class="form-group col-sm-6" >
+	<label>Name</label>
+	<input value="<%= pump.name %>" name="name" type="text" class="form-control" disabled/>
+	</div>
+
+	<div class="form-group col-sm-6" >
+	<label>Pumpcard</label>
+	<input value="<%= pump.pumpCard %>" name="pumpCard" type="text" class="form-control" disabled/>
+	</div>
+
+
+	<div class="form-group col-sm-6 " >
+	<label>LocationX</label>
+	<input value="<%= pump.locationX %>" name="locationX" type="text" class="form-control" disabled/>
+	</div>
+
+	<div class="form-group col-sm-6" >
+	<label>LocationY</label>
+	<input value="<%= pump.locationY %>" name="locationY" type="text" class="form-control" disabled/>
+	</div>
+
+	<div class="form-group col-sm-6 " >
+	<label>Generation</label>
+	<input value="<%= pump.generation %>" name="generation" type="text" class="form-control" disabled/>
+	</div>
+
+	<div class="form-group col-sm-6 " >
+	<label>Gender</label>
+	<input value="<%= pump.gender %>" name="gender" type="text" class="form-control" disabled/>
+	</div>
+
+	<div class="form-group col-sm-6 " >
+	<label>State</label>
+	<input value="<%= pump.state %>" name="state" type="text" class="form-control" disabled/>
+	</div>
+
+
+
+		<a href="/pump">Back to all pumps</a>
+
+
+</div>
+
+
+
+
+
+</form>
+
+<form class="show" action="/work/new" method="POST">
+	<h2> <%= pump.name %>'s Work history</h2>
+
+	<table  class='table table-hover table-condensed'>
+		<tr>
+			<th>Company</th>
+			<th>Boss</th>
+			<th>Months</th>
+			<th>	</th>
+			<th>	</th>
+			<th>	</th>
+
+		</tr>
+
+		<% _.forEach (pump.works, function(work) { %>
+
+				<tr data-id="<%=work.id %>" data-model="work">
+
+				<td><%= work.company%></td>
+
+				<td><%= work.boss%></td>
+
+				<td><%= work.time%></td>
+
+
+				<td><a href="/work/show/<%=work.id %>"  class="btn btn-primary btn-sm" role="button">Show</a></td>
+				<td><a href="/work/edit/<%=work.id %>"  class="btn btn-primary btn-sm" role="button">Edit</a></td>
+
+				<td><form action="/work/destroy/<%=work.id %>" method="POST">
+					<input type="hidden" name="_method" value="delete"/>
+					<input type="submit" value="Delete"  class="btn btn-danger btn-sm" role="button"/>
+				</form></td>
+			</tr>
+		<% }) %>
+	</table>
+
+	<input value="<%= pump.id %>" name="owner" type="hidden" />
+	<input type="submit" value="Add work record" class="btn btn-default"/>
+
+</form>

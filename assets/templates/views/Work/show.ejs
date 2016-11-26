@@ -1,0 +1,24 @@
+<form class="show">
+	<div class="form-group">
+		<h2> a work... </h2>
+
+	<div class="form-group" style="width: 400px;">
+	<label>Company name</label>
+	<input value="<%= work.company %>" name="company" type="text" class="form-control" disabled/>
+	</div>
+
+	<div class="form-group" style="width: 400px;">
+	<label>Direct Boss<</label>
+	<input value="<%= work.boss %>" name="boss" type="text" class="form-control" disabled/>
+	</div>
+
+	<div class="form-group" style="width: 400px;">
+	<label>Months Worked</label>
+	<input value="<%= work.time %>" name="time" type="text" class="form-control" disabled/>
+	</div>
+
+</div>
+</div>
+<a href="/work/edit/<%=work.id %>" class="btn btn-default">Edit</a> |
+<a href="/pump/show/<%=work.owner%>">Back to Pump</a>
+</form>

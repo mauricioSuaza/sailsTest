@@ -1,0 +1,30 @@
+	<form action="/work/update/<%=work.id%>" method="POST" class="edit">
+	<div class="form-group">
+		<h2> editing a work... </h2>
+		<% if(flash && flash.err) { %>
+<ul class="alert alert-success">
+<% Object.keys(flash.err).forEach(function(error) { %>
+<li><%- JSON.stringify(flash.err[error]) %></li>
+<% }) %>
+</ul>
+<% } %>
+
+	<div class="form-group" style="width: 400px;">
+	<label>Company name</label>
+	<input value="<%= work.company %>" name="company" type="text" class="form-control"/>
+	</div>
+
+	<div class="form-group" style="width: 400px;">
+	<label>Direct Boss</label>
+	<input value="<%= work.boss %>" name="boss" type="text" class="form-control"/>
+	</div>
+
+	<div class="form-group" style="width: 400px;">
+	<label>Months Worked</label>
+	<input value="<%= work.time %>" name="time" type="text" class="form-control"/>
+	</div>
+
+		</div>
+		<input type="submit" value="Update Work" class="btn btn-default"/>
+		<a href="/work/show/<%=work.id %>" class="btn btn-danger">Cancel</a>
+	</form>
