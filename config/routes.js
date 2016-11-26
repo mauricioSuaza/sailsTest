@@ -39,10 +39,10 @@ module.exports.routes = {
 
    'get /distance': 'DistanceController.distMeter',
 
-  
+
 
   '/': {
-    view : 'static/home'
+    view : '/distance'
   }
 
   /***************************************************************************
