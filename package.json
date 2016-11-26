@@ -26,8 +26,8 @@
     "sails-generate-scaffold": "git+https://github.com/marlonscalabrin/sails-generate-scaffold.git"
   },
   "scripts": {
-    "debug": "node debug app.js",
-    "start": "node app.js"
+    "start": "sails lift",
+    "debug": "node debug app.js"  
   },
   "main": "app.js",
   "repository": {
