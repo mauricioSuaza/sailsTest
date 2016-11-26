@@ -34,18 +34,12 @@ module.exports.routes = {
 
 
 
-  'get /users': 'UserController.index',
 
-  'get /todos': 'TodoController.index',
-
-  'get /create': 'TodoController.new',
-
-  'post /create': 'TodoController.create',
    // Index page
 
    'get /distance': 'DistanceController.distMeter',
 
-   'get /customer': 'CustomerController.index',
+  
 
   '/': {
     view : 'static/home'

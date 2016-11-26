@@ -78,9 +78,10 @@
           var b = parseInt($("#loc2").val());
           var c = parseInt($("#loc3").val());
           var d = parseInt($("#loc4").val());
-          var f = a+b+c+d;
 
-          $("#content").html(f);
+          var dist = Math.sqrt( Math.pow((a-c),2) + Math.pow((b-d),2) );
+          dist = parseFloat(dist).toPrecision(6)
+          $("#content").html("La distancia es " + dist);
 
         });
 
@@ -94,8 +95,8 @@
 
         $("#sel2").change(function(){
 
-          console.log($("#sel1").prop('selectedIndex'));
-          var savedIndex = $("#sel1").prop('selectedIndex');
+
+          var savedIndex = $("#sel2").prop('selectedIndex');
           $("#loc3").prop('selectedIndex', savedIndex);
           $("#loc4").prop('selectedIndex', savedIndex);
 

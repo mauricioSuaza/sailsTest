@@ -23,21 +23,21 @@
 </tr>
 	<% _.forEach(pumps, function(pump) { %>
     		<tr data-id="<%=pump.id %>" data-model="pump">
-		
+
 			<td><%= pump.name%></td>
-		
+
 			<td><%= pump.pumpCard%></td>
-		
+
 			<td><%= pump.generation%></td>
-		
+
 			<td><%= pump.locationX%></td>
-		
+
 			<td><%= pump.locationY%></td>
-		
+
 			<td><%= pump.gender%></td>
-		
+
 			<td><%= pump.state%></td>
-		
+
 			<td><a href="/pump/show/<%=pump.id %>"  class="btn btn-primary btn-sm" role="button">Show</a></td>
 			<td><a href="/pump/edit/<%=pump.id %>"  class="btn btn-primary btn-sm" role="button">Edit</a></td>
 
@@ -48,6 +48,7 @@
 		</tr>
 <% }) %>
 	</table>
-	<a href="/pump/new/" class="btn btn-success btn-sm" role="button">New Pump</a> |
-	<a href="/">all scaffolds</a>
+	<a href="/pump/new/" class="btn btn-success btn-sm" role="button">New Pump</a>
+	<a href="/">Back to main app</a>
+
 </div>
