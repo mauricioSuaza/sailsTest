@@ -38,6 +38,8 @@ try {
   return;
 }
 
+port: process.env.PORT || 1337
+
 // --•
 // Try to get `rc` dependency (for loading `.sailsrc` files).
 var rc;
