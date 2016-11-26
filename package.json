@@ -23,11 +23,12 @@
     "sails": "~0.12.10",
     "sails-disk": "~0.10.9",
     "sails-mysql": "^0.11.5",
-    "sails-generate-scaffold": "git+https://github.com/marlonscalabrin/sails-generate-scaffold.git"
+    "sails-generate-scaffold": "git+https://github.com/marlonscalabrin/sails-generate-scaffold.git",
+    "sails-mongo": "^0.12.1"
   },
   "scripts": {
     "start": "sails lift",
-    "debug": "node debug app.js"  
+    "debug": "node debug app.js"
   },
   "main": "app.js",
   "repository": {
