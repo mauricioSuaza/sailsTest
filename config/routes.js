@@ -42,7 +42,7 @@ module.exports.routes = {
 
 
   '/': {
-    view : 'distace/distMeter'
+    view : 'distance/distMeter'
   }
 
   /***************************************************************************
