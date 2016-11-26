@@ -28,9 +28,9 @@ module.exports.connections = {
   * Installed by default.                                                    *
   *                                                                          *
   ***************************************************************************/
-  localDiskDb: {
+  /*localDiskDb: {
     adapter: 'sails-disk'
-  },
+  },*/
 
   /***************************************************************************
   *                                                                          *
@@ -49,7 +49,7 @@ module.exports.connections = {
   },*/
 
 
-  someMongodbServer: {
+  somemongo: {
     adapter: 'sails-mongo',
     url: "mongodb://msuaza:aguapanela2@ds111178.mlab.com:11178/vdsign"
   }
