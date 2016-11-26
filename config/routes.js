@@ -37,13 +37,13 @@ module.exports.routes = {
 
    // Index page
 
-   'get /': 'DistanceController.distMeter',
+   'get /distance': 'DistanceController.distMeter',
 
 
-/*
-  '/': {
-    view : 'distance/distMeter'
-  }*/
+
+   '/': {
+     view : 'static/home'
+    }
 
   /***************************************************************************
   *                                                                          *
